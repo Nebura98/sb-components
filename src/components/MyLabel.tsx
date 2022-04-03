@@ -21,6 +21,8 @@ export interface PropsMyLabel {
      * fontColor es una propiedad opcional la cual mediante una paleta podemos elegir el color
      */
     fontColor?: string;
+
+    backgroundColor?: string
 }
 
 export const MyLabel = ({ 
@@ -28,11 +30,12 @@ export const MyLabel = ({
     color   = 'primary',
     label   = 'No Label', 
     size    = 'normal', 
-    fontColor
+    fontColor,
+    backgroundColor='transparent'
 }: PropsMyLabel ) => {
   return (
     <span 
-        className={ `label ${ size } text-${ color }` } style={{color:`${ fontColor }`}}
+        className={ `label ${ size } text-${ color }` } style={{color:`${ fontColor }`, backgroundColor}}
     >
         { allCaps ? label.toUpperCase() : label }
     </span>
